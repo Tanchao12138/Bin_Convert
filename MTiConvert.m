@@ -3,7 +3,7 @@
 fp=fopen(savefile,'w+');
 
 fprintf(fp,'// Start Time: Unknown\n');
-fprintf(fp,'// Update Rate: 100.0Hz\200.0Hz\400.0Hz\n');
+fprintf(fp,'// Update Rate: xxx\n');
 fprintf(fp,'// ZJUT MPU6500 \n');
 fprintf(fp,'// Baudrate 115200 \n');
 fprintf(fp,'// Firmware Version: xxx\n');
@@ -18,7 +18,7 @@ while ~feof(fid)
                 pktID = fread(fid,1,'single'); % skip three byte到四元数,默认为小端模式，这时要改成大端模式
                 acc = fread(fid,3,'int16');  % read accdata  
                 gyro = fread(fid,3,'single');% read gyro data
-                fprintf(fp,'%.1f\t%.6f\t%.6f\t%.6f\t%.6f\t%.6f\t%.6f\n',...
+                fprintf(fp,'%.1f\t%d\t%d\t%d\t%.6f\t%.6f\t%.6f\n',...
                 pktID,acc(1),acc(2),acc(3),gyro(1),gyro(2),gyro(3));
             end
      
