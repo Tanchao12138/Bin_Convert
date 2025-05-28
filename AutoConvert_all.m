@@ -21,7 +21,7 @@ for i = 1:runcycle
 	sfile = strrep(file,'data',[timestamp1,'_']);
     savefile = ['IMUConvertDir\ZJUT_',sfile];
 	
-    run MTiConvert;
+    run Key_Convert;
     fprintf([file,' converted\n']); 
 end
 
