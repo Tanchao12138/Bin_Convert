@@ -29,9 +29,9 @@ while ~feof(fid)
         Header2 = fread(fid,1,'uint8');
             if Header2 == 255
                 pktID = fread(fid,1,'single'); 
-                acc = fread(fid,3,'int16');  % read acc data  
+                acc = fread(fid,3,'single');  % read acc data  
                 gyro = fread(fid,3,'single');% read gyro data
-                fprintf(fp,'%.1f\t%d\t%d\t%d\t%.6f\t%.6f\t%.6f\n',...
+                fprintf(fp,'%.1f\t%.6f\t%.6f\t%.6f\t%.6f\t%.6f\t%.6f\n',...
                 pktID,acc(1),acc(2),acc(3),gyro(1),gyro(2),gyro(3));
             end
      
